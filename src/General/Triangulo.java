@@ -2,8 +2,8 @@ package General;
 
 public class Triangulo {
 
-    private float cateto1;
-    private float cateto2;
+    private static float cateto1;
+    private static float cateto2;
 
     public Triangulo(float cateto1, float cateto2) {
         this.cateto1 = cateto1;
@@ -14,8 +14,9 @@ public class Triangulo {
         return (float) Math.hypot(cateto1, cateto2);
     }
 
-    public float calcularArea() {
-        return cateto1 * cateto2 / 2;
+    public static float calcularArea() {
+        float area = cateto1 * cateto2 / 2;
+        return area;
     }
 
     public float calcularPerimetro() {
@@ -29,8 +30,5 @@ public class Triangulo {
                 cateto1, cateto2, calcularHipotenusa(), calcularArea(), calcularPerimetro());
     }
 
-	public static void main(String[] args) {
-		Triangulo t = new Triangulo(2.3f, 8.1f);
-		System.out.println(t);
-	}
+
 }
